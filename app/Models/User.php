@@ -40,4 +40,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getAvatarAttribute($size="50")
+    {
+        return "https://i.pravatar.cc/" . $size . "?u=" . $this->email;
+    }
+
+    public function timeline()
+    {
+        return Tweet::where('user_id', $this->id)->latest()->get();
+    }
 }
