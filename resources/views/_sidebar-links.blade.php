@@ -1,10 +1,10 @@
 <ul>
-    <li class="font-bold text-lg mb-4 block" href="/">Home</li>
-    <li class="font-bold text-lg mb-4 block" href="/explore">Explore</li>
-    <li class="font-bold text-lg mb-4 block" href="#">Notifications</li>
-    <li class="font-bold text-lg mb-4 block" href="#">Messages</li>
-    <li class="font-bold text-lg mb-4 block" href="#">Bookmarks</li>
-    <li class="font-bold text-lg mb-4 block" href="#">Lists</li>
-    <li class="font-bold text-lg mb-4 block" href="#">Profile</li>
-    <li class="font-bold text-lg mb-4 block" href="#">More</li>
+    <li class="font-bold text-lg mb-4 block"><a href="{{ route('home') }}">Home</a></li>
+    <li class="font-bold text-lg mb-4 block"><a href="/explore">Explore</a></li>
+    <li class="font-bold text-lg mb-4 block"><a href="#">Notifications</a></li>
+    <li class="font-bold text-lg mb-4 block"><a href="#">Messages</a></li>
+    <li class="font-bold text-lg mb-4 block"><a href="#">Bookmarks</a></li>
+    <li class="font-bold text-lg mb-4 block"><a href="#">Lists</a></li>
+    <li class="font-bold text-lg mb-4 block"><a href="{{ route('profile', auth()->user()->name) }}">Profile</a></li>
+    <li class="font-bold text-lg mb-4 block"><a href="#">More</a></li>
 </ul>
