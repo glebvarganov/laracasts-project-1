@@ -15,3 +15,5 @@ yarn-error.log
 .idea/
 .editorconfig
 .styleci.yml
+/public/.DS_Store
+.DS_Store
