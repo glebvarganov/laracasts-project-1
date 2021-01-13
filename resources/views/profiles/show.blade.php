@@ -8,7 +8,7 @@
             />
 
             <img
-                src="{{ $user->getAvatarAttribute(150) }}"
+                src="{{ $user->avatar }}"
                 alt="Your avatar"
                 class="rounded-full mr-2 absolute bottom-0"
                 width="150"
@@ -23,7 +23,13 @@
             </div>
 
             <div class="flex items-center">
-                <a class="rounded-full border border-gray-300 py-2 px-4 text-black text-sm mr-2" href="#">Edit profile</a>
+                @can('edit', $user)
+                    <a
+                        class="rounded-full border border-gray-300 py-2 px-4 text-black text-sm mr-2"
+                        href="{{ $user->path('edit') }}">
+                        Edit profile
+                    </a>
+                @endcan
                 <x-follow-button :user="$user"></x-follow-button>
             </div>
         </div>

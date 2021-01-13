@@ -18,9 +18,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'username',
         'name',
         'email',
         'password',
+        'avatar'
     ];
 
     /**
@@ -42,9 +44,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getAvatarAttribute($size="50")
+    public function getAvatarAttribute($value)
     {
-        return "https://i.pravatar.cc/" . $size . "?u=" . $this->email;
+        return asset($value);
+
+        // return "https://i.pravatar.cc/" . $size . "?u=" . $this->email;
     }
 
     public function timeline()
@@ -61,6 +65,13 @@ class User extends Authenticatable
     public function tweets()
     {
         return $this->hasMany(Tweet::class)->latest();
+    }
+
+    public function path($append = '')
+    {
+        $path = route('profile', $this->username);
+
+        return $append ? "{$path}/{$append}" : $path;
     }
 
     /*

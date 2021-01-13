@@ -10,6 +10,20 @@
                         @csrf
 
                         <div class="row mb-3">
+                            <label for="username" class="font-bold text-grey-darkest">{{ __('Username') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="username" type="text" class="border py-2 px-3 text-grey-darkest w-full @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
+
+                                @error('username')
+                                <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="name" class="font-bold text-grey-darkest">{{ __('Name') }}</label>
 
                             <div class="col-md-6">

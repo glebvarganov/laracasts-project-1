@@ -5,6 +5,6 @@
     <li class="font-bold text-lg mb-4 block"><a href="#">Messages</a></li>
     <li class="font-bold text-lg mb-4 block"><a href="#">Bookmarks</a></li>
     <li class="font-bold text-lg mb-4 block"><a href="#">Lists</a></li>
-    <li class="font-bold text-lg mb-4 block"><a href="{{ route('profile', auth()->user()->name) }}">Profile</a></li>
+    <li class="font-bold text-lg mb-4 block"><a href="{{ route('profile', auth()->user()->username) }}">Profile</a></li>
     <li class="font-bold text-lg mb-4 block"><a href="#">More</a></li>
 </ul>
