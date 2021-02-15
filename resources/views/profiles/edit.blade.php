@@ -45,7 +45,7 @@
 
         <div class="mb-6">
             <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="password">Password</label>
-            <input class="border border-gray-400 p-2 w-full" type="password" name="password" id="password" required />
+            <input class="border border-gray-400 p-2 w-full" type="password" name="password" id="password" />
             @error('password')
             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
@@ -53,7 +53,7 @@
 
         <div class="mb-6">
             <label class="block mb-2 uppercase font-bold text-xs text-gray-700" for="password_confirmation">Password Confirmation</label>
-            <input class="border border-gray-400 p-2 w-full" type="password" name="password_confirmation" id="password_confirmation" required />
+            <input class="border border-gray-400 p-2 w-full" type="password" name="password_confirmation" id="password_confirmation" />
             @error('password_confirmation')
             <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
             @enderror
@@ -61,6 +61,7 @@
 
         <div class="mb-6">
             <button type="submit" class="bg-blue-500 rounded-lg shadow py-2 px-2 text-white">Save profile</button>
+            <a href="{{ $user->path() }}" class="ml-3 hover:underline">Cancel</a>
         </div>
     </form>
 </x-app>
