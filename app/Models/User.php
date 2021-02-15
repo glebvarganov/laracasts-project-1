@@ -46,9 +46,14 @@ class User extends Authenticatable
 
     public function getAvatarAttribute($value)
     {
-        return asset($value);
+        return asset($value ?: '/images/default-avatar.png');
 
         // return "https://i.pravatar.cc/" . $size . "?u=" . $this->email;
+    }
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
     }
 
     public function timeline()
@@ -59,7 +64,7 @@ class User extends Authenticatable
 
         return Tweet::whereIn('user_id', $friends)
             ->orWhere('user_id', $this->id)
-            ->latest()->get();
+            ->latest()->paginate(50);
     }
 
     public function tweets()
