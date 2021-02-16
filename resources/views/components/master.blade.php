@@ -32,6 +32,8 @@
     </section>
 
     {{ $slot }}
+
+    @yield('page-scripts')
 </div>
 </body>
 </html>
