@@ -1,14 +1,17 @@
 <div class="border border-blue-400 rounded-lg px-8 py-6 mb-8">
     <form method="POST" action="/tweets">
         @csrf
-
+        <div class="text-xs text-muted mb-1 text-right">
+            <span id="publish-symbols-count">0</span> / 255
+        </div>
         <textarea
             name="body"
             class="w-full"
+            id="publish-panel"
             placeholder="What's up doc?"
             required
             autofocus
-        ></textarea>
+        >{{ old('body') }}</textarea>
 
         <hr class="my-4">
 
